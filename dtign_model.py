@@ -101,7 +101,7 @@ class MultiHeadAttention(torch.nn.Module):
         self.d_k = d_model // n_heads
         self.qkv_proj = nn.Linear(d_model, 3 * d_model)
         self.out_proj = nn.Linear(d_model, d_model)
-        self.attn_output = None   # để lưu attention
+        self.attn_output = None
 
     def forward(self, x):
         B, N, D = x.shape
@@ -114,7 +114,6 @@ class MultiHeadAttention(torch.nn.Module):
 
         scores = torch.matmul(q, k.transpose(-2,-1))/(self.d_k ** 0.5)
         attn = F.softmax(scores, dim=-1)
-        # self.attn_weights = attn.detach().cpu()   # lưu trọng số attention
 
         context = torch.matmul(attn, v).permute(1,2,0,3).reshape(B,N,D)
 
@@ -146,27 +145,14 @@ class DTIGN(torch.nn.Module):
                 data.edge_index_inter
             )
 
-        # if hasattr(data, "ptr"):
-        #     reps = []
-        #     for i in range(len(data.ptr) - 1):
-        #         start, end = data.ptr[i].item(), data.ptr[i + 1].item()
-        #         h_i = x[start:end]
-        #         rep = h_i.sum(dim=0, keepdim=True).unsqueeze(0)
-        #         reps.append(rep)
-        #
-        #     reps = torch.stack(reps, dim=0)
-        #     # reps = reps.unsqueeze(0)
-        # else:
-        #     reps = x.sum(dim=0, keepdim=True).unsqueeze(0)
         if hasattr(data, "batch"):
-            reps = global_mean_pool(x, data.batch)  # [B, D]
-            reps = reps.unsqueeze(1)  # [B, 1, D] — để khớp attention
+            reps = global_mean_pool(x, data.batch)
+            reps = reps.unsqueeze(1)
         else:
             reps = x.sum(dim=0, keepdim=True).unsqueeze(0)
 
         reps = self.attn(reps)
         self.attn_output = self.attn.attn_output
         final_rep = reps.mean(dim=1)
-        return self.mlp(final_rep).view(-1) # doi thanh ben duoi
+        return self.mlp(final_rep).view(-1)
         # return 7.0*torch.sigmoid(self.mlp(final_rep)).view(-1)
-
