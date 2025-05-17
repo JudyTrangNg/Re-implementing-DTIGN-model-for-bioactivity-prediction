@@ -1,1 +1,1 @@
-# Re-implementing-DTIGN-model-for-bioactivity-prediction
+# Re-implement-DTIGN-model-for-bioactivity-prediction
