@@ -37,7 +37,7 @@ This script performs:
 
 Trained models are saved under `saved_models/`.
 
-## 📊 Output
+### 5. Output
 
 After training, resutls were obtained:
 - `training_logs_fold{1–5}.csv`: logs of train loss, RMSE, Pearson, and Kendall over epochs
@@ -47,19 +47,17 @@ After training, resutls were obtained:
   Test RMSE: 1.72 | Pearson: 0.088 | Kendall τ: 0.304
   ```
 
-## ⚙️ Key Model Parameters
+### 6. Tuning Model Hyperparameters
 
-| Parameter       | Value         |
-|----------------|---------------|
-| Hidden Dim      | 128 / 256      |
-| GNN Layers      | 3             |
-| Attention Heads | 4             |
-| Dropout         | 0.2           |
+| Parameter       | Value                             |
+|-----------------|-----------------------------------|
+| Hidden Dim      | 128 / 256                         |
+| GNN Layers      | 3                                 |
+| Attention Heads | 4                                 |
+| Dropout         | 0.2/0/3                           |
 | Optimizer       | Adam (lr=1e-3, weight_decay=1e-3) |
 
 ## 📌 Notes
 
-- All `y` values (pEC50) are **kept as-is** (no sign flipping) to reflect that **higher pEC50 = stronger bioactivity**.
 - Standardization `(y - mean) / std` is applied using train set statistics.
-- The model uses `global_mean_pool` for graph-level embedding and multi-head self-attention.
 
