@@ -60,7 +60,7 @@ After training, resutls were obtained:
 | Dropout         | 0.2/0/3                           |
 | Optimizer       | Adam (lr=1e-3, weight_decay=1e-3) |
 
-## 📌 Notes
+## ** Notes **
 
 - Standardization `(y - mean) / std` is applied using train set statistics.
 
