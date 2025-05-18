@@ -14,7 +14,7 @@ DTIG/
 │   │   ├── fixed_train_3/             # Fold 3
 │   │   ├── fixed_train_4/             # Fold 4
 │   │   ├── fixed_train_5/             # Fold 5
-│   │   ├── fixed_test/               # Independent test set
+│   │   ├── fixed_test/                # Independent test set
 │   ├── train_test_full_fixed.py       # Main training & evaluation script
 ├── dtign_model.py                     # Model architecture (GNN + attention)
 ├── saved_models/                      # Best models saved during training
