@@ -28,8 +28,10 @@ python fix_format_data.py
 ```bash
 python train.py
 ```
-Define a DTIGN model:   dtign_model.py
-
+Define a DTIGN model:   
+```bash
+python dtign_model.py
+```
 This script performs:
 - 5-fold cross-validation
 - Training loop for 10 epochs
