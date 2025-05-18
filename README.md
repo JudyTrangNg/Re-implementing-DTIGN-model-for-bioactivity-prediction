@@ -3,26 +3,6 @@
 
 This repository contains the implementation of the DTIGN (Drug–Target Interaction Graph Network) model to predict the **pEC50** values based on molecular graphs of ligands.
 
-## 📁 Folder Structure
-
-```
-DTIG/
-├── pEC50/
-│   ├── fixed_data/                    # Preprocessed `.pyg` graph data for training & testing
-│   │   ├── fixed_train_1/             # Fold 1 for training/validation
-│   │   ├── fixed_train_2/             # Fold 2
-│   │   ├── fixed_train_3/             # Fold 3
-│   │   ├── fixed_train_4/             # Fold 4
-│   │   ├── fixed_train_5/             # Fold 5
-│   │   ├── fixed_test/                # Independent test set
-│   ├── train_test_full_fixed.py       # Main training & evaluation script
-├── dtign_model.py                     # Model architecture (GNN + attention)
-├── saved_models/                      # Best models saved during training
-├── utils/                             # (Optional) utility functions
-├── README.md                          # Project description and instructions
-├── requirements.txt                   # Python package dependencies
-```
-
 ## Setup Instructions
 
 ### 1. Create virtual environment (optional)
