@@ -72,14 +72,3 @@ After training, you will get:
 - Standardization `(y - mean) / std` is applied using train set statistics.
 - The model uses `global_mean_pool` for graph-level embedding and multi-head self-attention.
 
-## 📚 Citation
-
-If you use this codebase in your research, please cite:
-```bibtex
-@misc{dtignpec50,
-  title={pEC50 Prediction using Graph Neural Networks},
-  author={Hoàng Trang et al.},
-  year={2024},
-  note={GitHub repository: https://github.com/yourusername/DTIGN-pEC50}
-}
-```
