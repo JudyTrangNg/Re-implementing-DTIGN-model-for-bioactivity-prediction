@@ -18,28 +18,33 @@ pip install -r requirements.txt
 
 > ⚠️ Ensure CUDA version matches your system if using GPU.
 
-### 3. Run Instructions
+### 3. Reconstruct graph structure in order to compatible with torch_geometric.data.Data
+```bash
+python fix_format_data.py
+```
+### 4. Run Instructions
 
 ### To train the model and evaluate on test set:
 ```bash
-python train_test_full_fixed.py
+python train.py
 ```
 
 This script performs:
 - 5-fold cross-validation
-- Model selection based on best validation Pearson correlation
+- Training loop for 10 epochs
+- Model selection based on best validation Pearson value
 - Final evaluation on test set
 
 Trained models are saved under `saved_models/`.
 
 ## 📊 Output
 
-After training, you will get:
-- `training_logs_fold{1–5}.csv`: logs of RMSE, Pearson, and Kendall over epochs
+After training, resutls were obtained:
+- `training_logs_fold{1–5}.csv`: logs of train loss, RMSE, Pearson, and Kendall over epochs
 - `best_model_fold{n}.pt`: best model weights per fold
 - Final test performance printed:
   ```
-  Test RMSE: 1.74 | Pearson: 0.07 | Kendall τ: 0.01
+  Test RMSE: 1.72 | Pearson: 0.088 | Kendall τ: 0.304
   ```
 
 ## ⚙️ Key Model Parameters
