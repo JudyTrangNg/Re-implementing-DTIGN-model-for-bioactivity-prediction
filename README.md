@@ -70,7 +70,7 @@ After training, you will get:
 | GNN Layers      | 3             |
 | Attention Heads | 4             |
 | Dropout         | 0.2           |
-| Optimizer       | Adam (lr=1e-3, weight_decay=5e-4) |
+| Optimizer       | Adam (lr=1e-3, weight_decay=1e-3) |
 
 ## 📌 Notes
 
