@@ -17,7 +17,7 @@ DTIG/
 ├── saved_models/              # Saved best models
 ```
 
-## 🔧 Setup Instructions
+## Setup Instructions
 
 ### 1. Create virtual environment (optional)
 ```bash
@@ -32,7 +32,7 @@ pip install -r requirements.txt
 
 > ⚠️ Ensure CUDA version matches your system if using GPU.
 
-## 🚀 Run Instructions
+### 3. Run Instructions
 
 ### To train the model and evaluate on test set:
 ```bash
