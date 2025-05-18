@@ -83,7 +83,3 @@ If you use this codebase in your research, please cite:
   note={GitHub repository: https://github.com/yourusername/DTIGN-pEC50}
 }
 ```
-
-## 🤝 Contact
-
-For questions or collaboration, feel free to contact **Hoàng Trang** via email or GitHub.
